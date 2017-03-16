@@ -1,0 +1,151 @@
+/*!!!!! a !!!!!!!*/
+body{
+    background-color: darkorange;
+}
+a:link {  text-decoration: none; color: blue; }
+a:hover { text-decoration: underline; color: red; }
+a:visited { text-decoration: none; color: saddlebrown; }
+
+/*!!!!!!!!!!! header !!!!!!!!! */
+.header_div{
+    background-image:url("images/06.jpg");
+    background-repeat: no-repeat;
+    height:400px;
+    margin: auto;
+    width:95%;
+
+    text-decoration: blink;
+}
+
+.header_p{
+    font-size: xx-large;
+    letter-spacing: 1px;
+    font-style: italic;
+    line-height: 200px;
+    text-align: right;
+}
+
+/*!!!!!!!!! footer.php !!!!!!!*/
+.footer{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-color: #ff9966;
+}
+
+/* !!!!!!!!!! login  !!!!!!!!!  */
+
+.login_div{
+
+}
+
+.login_form{
+    text-align: center;
+    padding: 50px;
+
+}
+
+.login_p{
+    text-align: center;
+}
+
+.error{
+    text-align: center;
+    font-style: inherit;
+    color: darkgrey;
+
+}
+
+/*           sign up            */
+.sud{
+
+}
+
+.suf{
+    text-align: center;
+}
+
+.su_p{
+    text-align: center;
+}
+
+/********   message     */
+.meg_form{
+    text-align: center;
+}
+.meg_p{
+    text-align: center;
+}
+
+
+
+
+/****        index.php           ***/
+.box{
+    width: 100%;
+    display: flex;
+    height:800px;
+    margin: 10px;
+    /*padding: 0px;*/
+    background-color: #fff;
+}
+
+.left{
+    width:400px ;
+    /*float: left;*/
+    height: 800px;
+    margin: 10px;
+    background-image:url(images/001.jpg) ;
+}
+
+.center{
+    flex: 1;
+    height: 800px;
+    background-image: url(images/002.jpg);
+    margin: 10px ;
+    text-align: center;
+}
+
+.right{
+    width: 400px;
+    height: 800px;
+    margin: 10px;
+    background-image: url(images/003.jpg);
+    /*float: right;*/
+}
+
+.clear{
+    clear: both;
+}
+
+.p{
+    color: red;
+    text-align: center;
+}
+.btn-1 {
+    color: #A3F7BF;
+    border-color: #A3F7BF;
+    background: -webkit-linear-gradient(left, #a3f7bf, #a3f7bf) no-repeat;
+    background: linear-gradient(to right, #a3f7bf, #a3f7bf) no-repeat;
+    background-size: 0% 100%;
+}
+
+button {
+    margin: 30px 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid;
+    font: 16px 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+.btn-2{
+    color: #53CDD8;
+    border-color: #53CDD8;
+    position: relative;
+    overflow: hidden;
+}
