@@ -9,7 +9,22 @@ It is a messageboard made by php
  
  
  1. user  
- *id    *username   *password
+ *id   
+ 
+ *username  
+ 
+ *password
+ 
+ 
  2.meg  
- *id    *username    *title    *content   *date
+ 
+ *id 
+ 
+ *username 
+ 
+ *title  
+ 
+ *content 
+ 
+ *date
 
