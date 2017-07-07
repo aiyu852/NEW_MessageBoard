@@ -60,7 +60,7 @@ if (isset($_POST["submit"])){
 
 
 <div>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" class="meg_form">
+    <form action="meg.php" method="post" class="meg_form">
         <br />
         <br />
         <br />
@@ -74,6 +74,7 @@ if (isset($_POST["submit"])){
         <br />
         <span class="error"><?php echo $ContentErr; ?></span>
         <br />
+        是否匿名：
         <br />
         <label for="no">否</label>
         <input type="radio" name="anonymous" id="no" value="0" checked>
@@ -82,7 +83,7 @@ if (isset($_POST["submit"])){
         <br />
         <span class="error"><?php echo $AnonymousErr; ?></span>
         <br />
-        <p>目前用户为<?php if ($_SESSION['username']){echo $_SESSION['username'];}else{echo "未知";} ?>
+        <p>目前用户为<?php if ($_SESSION['username'] != ""){echo $_SESSION['username'];}else{echo "未知";} ?>
             <br />
             <input type="submit" name="submit" value="发表">
     </form>

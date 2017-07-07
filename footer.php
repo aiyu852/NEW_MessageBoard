@@ -4,7 +4,9 @@
     $day = date("D");
     echo "
             </div>
-           <div class='footer'>
+           ";
+echo '<div class="footer">';
+echo "
                 <footer>no Copyright &copy; 2017 - $day.$year.$month</footer>
                 <p>如有任何问题，请联系E-mail:1205105078@qq.com</p>
            </div>

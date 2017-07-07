@@ -6,6 +6,7 @@
     $OK = 1;
     $UsernameErr = $PasswordErr = " ";
     if(isset($_POST["submit"])){
+//        echo "hello";
         $Username = input_safety($_POST["username"]);
         $Password = input_safety($_POST["password"]);
         $_Password = input_safety($_POST["pdr"]);
@@ -37,11 +38,11 @@
             if ($Permit){
                 $con->query("INSERT INTO user (username,password) VALUES ('$Username','$Password')");
                 echo"
-                       <p class='su_p'>欢迎您的加入,该页面将会在3秒后跳转到主页。
+                       <p class='su_p'>欢迎您的加入,该页面将会在3秒后跳转到登录页。
                         <br />
-                        <a href='index.php'>若您的浏览器无反应请点击此处回到主页！</a></p>
+                        <a href='login.php'>若您的浏览器无反应请点击此处到登录页！</a></p>
                 ";
-                echo '<meta http-equiv="refresh" content="3;url=index.php" /> ';
+                echo '<meta http-equiv="refresh" content="3;url=login.php" /> ';
             }
         }
     }
@@ -55,7 +56,7 @@
    <!          注册提交页        >
 <br />
     <div class="sud">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" class="suf">
+        <form action="signup.php" method="post" class="suf">
                 账号（昵称）：<input type="text" name="username" placeholder="Username"  size="30" maxlength="10">
                 <br />
                 <span class="error"><?php echo $UsernameErr;?></span>
@@ -69,7 +70,7 @@
                 重复密码：<input type="password" name="pdr" placeholder="Password"  size="30" maxlength="20" >
                 <br />
                  <br />
-                <input type="submit" name="submit" value="Sign Up">
+                <input type="submit" name="submit" value="注册">
         </form>
     </div>
 

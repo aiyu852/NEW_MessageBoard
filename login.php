@@ -1,6 +1,6 @@
 <?php
     require("header.php");
-
+//    session_start();
 /*   完善提交表单处理工作  */
 
 
@@ -34,13 +34,17 @@
                 $OK =0;
             }
             if($OK) {
+                echo '
+                        <p class="login_p">';
                 echo "
-                        <p class='login_p'>欢迎您的登录,该页面将会在3秒后跳转到主页。
+                        欢迎您的登录,该页面将会在3秒后跳转到主页。
                         <br />
                         <a href='index.php'>若您的浏览器无反应请点击此处回到主页！</a></p>
                         ";
                 /*!!   关于设置session 和cookie 的区别！   待补充   !!*/
+//                echo $row["username"];
                 $_SESSION['username']=$row["username"];
+//                echo $_SESSION['username'];
                 echo '<meta http-equiv="refresh" content="3;url=index.php" />';
             }
         }
@@ -49,7 +53,7 @@
 
 ?>
 <div class="login_div">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method='post' class="login_form">
+    <form action="login.php" method='post' class="login_form">
         昵称：<input type="text" name="username" placeholder="Username"  size="30" maxlength="10">
         <br />
         <span class="error"><?php echo $Username_Err;?></span>
@@ -64,7 +68,7 @@
 
 
 
-   <?php require("footer.php");
+   <?php require('footer.php');
 /**
  * Created by PhpStorm.
  * User: 艾煜

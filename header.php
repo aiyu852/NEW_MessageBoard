@@ -20,6 +20,7 @@ function input_safety($date){
 echo '
             <html>
                 <head>
+//                    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
                     <meta http-equiv="content-type" content="text/html;charset=utf-8">
                     <title>MessageBoard</title>
                     <link href="css.css" rel="stylesheet" type="text/css">
@@ -29,21 +30,34 @@ echo '
                             <p class="header_p">EricAlan的留言板</p>
                             <a href="index.php"><p class="header_p">主页</p></a>
                     </div>
-                </body>
-            </html>';
+ ';
 
 session_start();
-if($_SERVER['PHP_SELF'] = 'index.php'){
+//$_SESSION['username'];
+//if(!$_SESSION['username']){
+//    $_SESSION['username']=" ";
+//}
+if ($_SESSION['username']){
+    echo "欢迎您！";
+    echo $_SESSION['username'];
+    echo "<br />";
+}
+
+if($_SESSION['username']){
     echo '
-        <button  class="btn-1" type="button" onclick="window.location.href=(\'login.php\')" class="button">登录</button>
-        <button class="btn-2" type="button" onclick="window.location.href=(\'meg.php\')" class="button">留言</button>
+        <button class="button" type="button" onclick="window.location.href=(\'out.php\')">退出</button> 
     ';
 }
-if (!$_SESSION['username']){
+else {
     echo '
-        <button class="button" type="button" onclick="window.location.href=(\'signup.php\')" class="button">注册</button>
+        <button class="button" type="button" onclick="window.location.href=(\'login.php\')">登录</button>
+        <button class="button" type="button" onclick="window.location.href=(\'signup.php\')" >注册</button>
     ';
 }
+    echo '
+        <button class="button" type="button" onclick="window.location.href=(\'meg.php\')" >留言</button>
+    ';
+
 
 //$_SESSION['view']=1234567890;
 //echo $_SESSION['view'];

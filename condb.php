@@ -1,5 +1,6 @@
 <?php
-$con = mysqli_connect("localhost","root","root","megbd");
+error_reporting(E_ALL || ~E_NOTICE);
+$con = mysqli_connect("localhost","test","test1234","nehscsa_megbd");
 if(!$con){
     die("连接失败".mysqli_connect_error());
 }
