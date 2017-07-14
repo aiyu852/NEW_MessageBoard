@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* Mobile view */
+@media screen and (min-width: 320px) and (max-width: 700px) {
+
+.button_table {
+	float: none;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.button_table th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.button_table_a {
+    vertical-align: top
+}
+}

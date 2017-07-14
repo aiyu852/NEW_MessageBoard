@@ -1,73 +1,104 @@
 <?php
-    require("header.php");
+header("content-type:text/html;charset=utf-8");
 
-/*   完善提交表单处理工作  */
+//    session_start();
+/*完善提交表單處理工作*/
+/*!! 表單與數據庫交互處理 !!*/
+require("header.php");
 
+$Online=1;
+$Username_Err = $Password_Err = "";
+if(isset($_POST["submit"])){
+  $Username = input_safety($_POST["username"]);
+  $Password = input_safety($_POST["password"]);
 
-    /*!! 表单与数据库交互处理 !!*/
-
-    $Online=1;
-    $Username_Err = $Password_Err = " ";
-    if(isset($_POST["submit"])){
-        $Username = input_safety($_POST["username"]);
-        $Password = input_safety($_POST["password"]);
-        /*!! 验证账户和密码 !!*/
-        if(empty($Username)){
-            $Username_Err = "账户名不得为空";
-            $Online = 0;
-        }
-        if(empty($Password)){
-            $Password_Err = "密码不得为空";
-            $Online = 0;
-        }
-        if($Online){
-            $OK=1;
-            $realUsername = $realPassword = " ";
-            $result = $con->query("SELECT username,password FROM user where username = '$Username'");
-            $row= $result->fetch_assoc();
-            if($result->num_rows == 0){
-                $Username_Err = "不存在此账户";
-                $OK =0;
-            }
-            elseif($row["password"] != $Password){
-                $Password_Err = "该账号密码错误";
-                $OK =0;
-            }
-            if($OK) {
-                echo "
-                        <p class='login_p'>欢迎您的登录,该页面将会在3秒后跳转到主页。
-                        <br />
-                        <a href='index.php'>若您的浏览器无反应请点击此处回到主页！</a></p>
-                        ";
-                /*!!   关于设置session 和cookie 的区别！   待补充   !!*/
-                $_SESSION['username']=$row["username"];
-                echo '<meta http-equiv="refresh" content="3;url=index.php" />';
-            }
-        }
+  if($Online){
+    $OK=1;
+    $realUsername = $realPassword = " ";
+    $result = $con->query("SELECT username,password FROM user where username = '$Username'");
+    $row= $result->fetch_assoc();
+    if($result->num_rows == 0){
+      $Username_Err = "不存在此帳號";
+      $OK =0;
     }
+    elseif($row["password"] != $Password){
+      $Password_Err = "密碼錯誤";
+      $OK =0;
+    }
+    if($OK) {
+      echo '
+      <p class="info">';
+      echo "
+      歡迎您的登錄,該頁面將會在3秒後跳轉到主頁。
+      <br>
+      <a href='index.php'>若您的瀏覽器無反應請點擊此處回到主頁！</a>
+      </p>
+      ";
+      /*關於設置session 和cookie 的區別 待補充 */
+      //echo $row["username"];
+      $_SESSION['username']=$row["username"];
+      //echo $_SESSION['username'];
+      echo '<meta http-equiv="refresh" content="3;url=index.php" />';
+    }
+  }
+}
 
 
 ?>
+
 <div class="login_div">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method='post' class="login_form">
-        昵称：<input type="text" name="username" placeholder="Username"  size="30" maxlength="10">
-        <br />
-        <span class="error"><?php echo $Username_Err;?></span>
-        <br />
-        密码：<input type="password" name="password" placeholder="Password"   size="30" maxlength="20">
-        <br />
-        <span class="error"><?php echo $Password_Err;?></span>
-        <br />
-        <input type="submit" name="submit" value="登录" >
-    </form>
+  <form  class="login_form" onsubmit="return login_check();" action="login.php" method='post'>
+    <table class="login">
+      <tr>
+        <td class="login-a">用戶名：</td>
+        <td class="login-a">
+          <input class="login-input" type="text" name="username" id="username" placeholder="Username" maxlength="10">
+        </td>
+      </tr>
+      <tr>
+        <td class="login-a">密碼：</td>
+        <td class="login-a">
+          <input class="login-input" type="password" name="password" id="password" placeholder="Password" maxlength="20">
+        </td>
+      </tr>
+    </table>
+    <br>
+    <button type="submit" name="submit">登入</button>
+  </form>
 </div>
+<script>
+  function login_check(){
+    if(document.getElementById("username").value =='' && document.getElementById("password").value == ''){
+      alert('帳號與密碼不得為空');
+      document.getElementById("username").focus();
+      return false;
+    }
+    else if(document.getElementById("username").value =='')
+    {
+      alert('帳號不得為空');
+      document.getElementById("username").focus();
+      return false;
+    }
+    else if(document.getElementById("password").value =='')
+    {
+      alert('密碼不得為空');
+      document.getElementById("password").focus();
+      return false;
+    }
+    return true;
+  }
+  <?php
+  //根據上方的 $Username_Err $Password_Err 來判別要不要印出 alert
+  if($Username_Err != '')
+  {
+    echo "alert('{$Username_Err}');";
+  }
 
+  if($Password_Err != '')
+  {
+    echo "alert('{$Password_Err}');";
+  }
+  ?>
+</script>
 
-
-   <?php require("footer.php");
-/**
- * Created by PhpStorm.
- * User: 艾煜
- * Date: 2017/3/11
- * Time: 1:12
- */
+<?php require('footer.php');?>

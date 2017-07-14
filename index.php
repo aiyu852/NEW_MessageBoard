@@ -1,58 +1,28 @@
 <?php
-    require("header.php");
-    /*         子网页的检查！            */
-//    require("login.php");
+header("content-type:text/html;charset=utf-8");
+require("header.php");
     $sql = "SELECT username,title,content,date FROM msg";
     $result = $con->query($sql);
-
-
-
 
 if($result->num_rows > 0) {
     while ($row = $result->fetch_assoc())
     {
     echo '
-
-
-<div class="box">
-    <div class="left">
-    <p class="p">留言人<br />'.$row["username"].'</p></div>
-    <div class="center">
-    <p class="p">标题<br />'.$row["title"].'</p>
-    <p class="p">内容<br />'.$row["content"].'</p></div>
-    <div class="right">
-    <p class="p">'.$row["date"].'</p></div>
-    <div class="clear"></div>
-</div>
-';
-}
-}
-
-
-
-
-
-
-//    $sql = "SELECT id,username,password FROM user";
-//    $result = $con ->query($sql);
-//   if ($result->num_rows > 0){
-//       while ($row = $result->fetch_assoc()){
-//           echo"<br>id ".$row["id"]."   -username ".$row["username"]."   -password".$row["password"];
-//       }
-//   }
-
-
-/*********真正内容  */
-
-
-
-
-
-
+      <div class="box_div">
+        <table class="box">
+          <tr>
+            <td class="box-profile" rowspan="3">'.$row["username"].'</td>
+            <td class="box-title">'.$row["title"].'</td>
+          </tr>
+          <tr>
+            <td class="box-content">'.$row["content"].'</td>
+          </tr>
+          <tr>
+            <td class="box-date">發佈時間：'.$row["date"].'</td>
+          </tr>
+        </table>
+      </div>
+         ';
+    }
     require("footer.php");
-/**
- * Created by PhpStorm.
- * User: 艾煜
- * Date: 2017/3/10
- * Time: 21:37
- */
+}

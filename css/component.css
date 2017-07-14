@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* Button view */
+@font-face {
+	font-family: 'icomoon';
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* little button style */
+.button-act {
+	border-radius: 10px;
+	font-size: xx-large;
+	background: none;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0px;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+	font-weight: bold;
+	outline: none;
+	position: relative;
+	transition: all 0.3s;
+}
+.button-act:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.button-act-1 {
+	border: 3px solid #000;
+	color: #000;
+}
+
+.button-act-1a:hover, .btn-act-1a:active {
+	color: #0361ff;
+	background: none;
+	border: 3px solid #0361ff;
+}

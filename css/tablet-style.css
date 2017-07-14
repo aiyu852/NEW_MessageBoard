@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/* Tablet view */
+@media screen and (min-width: 700px) and (max-width: 1224px) {
+#mainwrapper {
+	background-color: #ffffff;
+	overflow: auto;
+	font-family: montserrat, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	height: auto;
+	width: auto;
+	color: rgba(146,146,146,1.00);
+	text-align: center;
+	float: none;
+}
+
+#header {
+	text-align: center;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	height: auto;
+	color: rgba(146,146,146,1.00);
+	background-color: rgba(208,207,207,1.00);
+}
+
+#logo {
+	width: 40%;
+	height: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	color: rgba(146,146,146,1.00);
+}
+
+#logo-img {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	color: rgba(146,146,146,1.00);
+}
+
+#leftside {
+	display: none;
+	width: 20%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 32px;
+	margin-top: 150px;
+	float: left;
+	background-color: rgba(246,246,246,1.00);
+	overflow: auto;
+}
+
+.nav-link ul li {
+	list-style-type: none;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.nav-link ul {
+	padding-left: 0%;
+}
+.nav-link ul li a {
+	color: rgba(146,146,146,1.00);
+	text-decoration: none;
+}
+
+.center h1 {
+	text-align: center;
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20%;
+	color: rgba(146,146,146,1.00);
+	white-space: nowrap;
+}
+
+.center h2 {
+	width: 100%;
+	text-align: center;
+	color: rgba(146,146,146,1.00);
+	white-space: nowrap;
+}
+	
+/* index.php */
+.box_div{
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}	
+
+.box{
+    border-width: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+	border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+    border: 1px #cccccc solid;
+    border-width: 1px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.box-profile {
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 3px;
+    text-align: center;
+    width: 20%;
+	height: 100%;
+}
+
+.box-title {
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 3px;
+	height: 10%;
+}
+
+.box-content {
+    vertical-align: top;
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 3px;
+	height: 100%;
+}
+
+.box-date {
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 3px;
+    height: 5%;
+    text-align: center;
+}
+
+.box tr:first-child td:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.box tr:first-child td:last-child {
+  border-top-right-radius: 5px;
+}
+
+.box tr:last-child td:first-child {
+  border-bottom-right-radius: 5px;
+}
+
+/* login */
+.login_div{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_form{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35%;
+}
+
+.login {
+    width: 100%;
+    height: 40%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.login tr:first-child td:first-child {
+  border-top-left-radius: 5px;
+}
+
+.login tr:first-child td:last-child {
+  border-top-right-radius: 5px;
+}
+
+.login tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.login tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.login .login-a {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.login-input{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+}
+
+.login_p{
+    text-align: center;
+}
+
+/* Error */
+.error{
+    text-align: center;
+    font-style: inherit;
+    color: red;
+
+}
+
+/* sign up */
+.signup_div{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup_form{
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 35%;
+}
+
+.signup {
+    width: 100%;
+    height: 55%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.signup tr:first-child td:first-child {
+  border-top-left-radius: 5px;
+}
+
+.signup tr:first-child td:last-child {
+  border-top-right-radius: 5px;
+}
+
+.signup tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.signup tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.signup-a {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.signup-input{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+}
+
+/* message */
+.message_div{
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message_form{
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message {
+    width: 100%;
+    height: 70%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    word-break: normal;
+    text-align: center;
+}
+
+.message tr:first-child td:first-child {
+  border-top-left-radius: 5px;
+}
+
+.message tr:first-child td:last-child {
+  border-top-right-radius: 5px;
+}
+
+.message tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.message tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.message-content{
+    width: 100%;
+    height: 35px;
+    font-size: x-large;
+}
+
+.message-title{
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.message-input{
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.message-text{
+    font-size: x-large;
+    text-align: left;
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+/* footer */
+footer{
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: 0px;
+	margin-top: 30px;
+}
+
+footer p{
+    text-align: center;
+	font-family: Arial;
+	color: black;
+}
+}

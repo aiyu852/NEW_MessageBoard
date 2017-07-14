@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* Mobile view */
+@media screen and (min-width : 320px ) and (max-width : 700px){
+
+@font-face {
+	font-family: 'icomoon';
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* little button style */
+.button-act {
+	display: inline-flex;
+	border-radius: 10px;
+	font-size: large;
+	background: none;
+	cursor: pointer;
+	width: 100%;
+	height: 150%;
+	text-transform: uppercase;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+	outline: none;
+	transition: all 0.3s;
+}
+.button-act:after {
+	content: '';
+	position: absolute;
+	z-index: 0;
+	transition: all 0.3s;
+}
+
+.button-act-2 {
+	border: 3px solid #000;
+	color: #000;
+}
+
+.button-act-2a:hover, .btn-2a:active {
+	color: #0361ff;
+	background: none;
+	border: 3px solid #0361ff;
+}
+}

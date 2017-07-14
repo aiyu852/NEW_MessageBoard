@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* Button Style */
+.button_table {
+	float: none;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+.button_table th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.button_table_a {
+    vertical-align: top
+}
